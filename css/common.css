@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+body {
+	font-family: sans-serif;
+	background-color: #87ceeb;
+	margin: 0;
+}
+
+
+.title{
+	font-family: serif;
+	color: #2e8b57;
+}
+
+img {
+	max-width: 30%;
+	height: auto;
+}
+
+footer{
+	color: #ffffff;
+	background-color: #00bfff;
+	text-align: center;
+	width: 100%;
+	padding: 2em 0;
+}
+
+.center{
+	text-align: center;
+}
+
+.big{
+	font-size: 2em;
+}
