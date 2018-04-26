@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>ソララランのページ</title>
+	<link rel="stylesheet" href="css/common.css">
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107254274-1');
+</script>
+
+</head>
+<body>
+    <header>
+    	<div class="center">
+		<h1 class="title">ソララランのページ</h1>
+		<div><img src="image/index/three.jpg" alt="Les Trois Mousquetaires"></div>
+	</div>
+    </header>
+    <main>
+    	<div class="center">
+    		<span class="big">gitメモ<br></span>
+    	</div>
+    	<span class="semibig">使いそうなコマンド集</span>
+    	<ul>
+			<li>ローカルコンピュータで作ったリポジトリの初期化</li>
+			git init<br>
+		    <li>リポジトリの状態を確認</li>
+		    git status<br>
+		    <li>ステージ領域へファイルを追加(ファイル名のところを.にするとフォルダ全部できる)</li>
+		    git add ファイル名<br>
+		    <li>リポジトリの歴史を記録</li>
+		    git commit -m コメント<br>
+		    <li>コミットログを確認</li>
+		    git log<br>
+		    <li>変更差分を確認</li>
+		    git diff<br>
+		    <li>ブランチを一覧表示</li>
+		    git branch<br>
+		    <li>ブランチ作成</li>
+		    git branch ブランチ名<br>
+		    <li>ブランチの移動</li>
+		    git checkout ブランチ名<br>
+		    <li>ブランチのマージ</li>
+		    git merge --no-ff ブランチ名<br>
+		    <li>歴史を戻る</li>
+		    git reset --hard コミットID<br>
+		    <li>リモートリポジトリの登録</li>
+		    git remote add 登録名 リポジトリのパス(githubのページでコピーできるあれ)<br>
+		    <li>リモートリポジトリへ送信</li>
+		    git push<br>
+		    <li>リモートリポジトリを取得</li>
+		    git clone リポジトリのパス(あれ)<br>
+	    </ul>
+	    <span class="semibig">よくあるパターン(?)<br></span>
+	    git branch ファイル名でブランチで分ける(ローカル環境内でmasterがバックアップ、ミスったらmasterへ帰る)<br>
+	    ↓<br>
+	    git checkout ブランチ名で作ったブランチへ移動<br>
+	    ↓<br>
+	    実作業が上手くいった<br>
+	    ↓<br>
+	    git merge --no-ff ブランチ名で作業してるところをmasterにしちゃう<br>
+	    ↓<br>
+	    git add ファイル名でファイル追加<br>
+	    ↓<br>
+	    git commit -m ファイル名でコミット<br>
+	    ↓<br>
+	    git pushで自分のgithubにアップロード<br>
+	    ↓<br>
+	    github上で元々のリポジトリにプルリクエスト送信<br>
+	    ↓<br>
+	    他の人にマージしてもらう<br>
+		<div class="center"><br><a href="index.html">homeへ</a></div>
+    </main>
+    <footer>
+		<p>Copyright &copy; 2017 Solalalan</p>
+	</footer>
+</body>
+</html>
