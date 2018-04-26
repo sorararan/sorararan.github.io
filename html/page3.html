@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>ソララランのページ</title>
-	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="../css/common.css">
 	<!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
 <script>
@@ -19,7 +19,7 @@
     <header>
     	<div class="center">
 		<h1 class="title">ソララランのページ</h1>
-		<div><img src="image/index/three.jpg" alt="Les Trois Mousquetaires"></div>
+		<div><img src="../image/index/three.jpg" alt="Les Trois Mousquetaires"></div>
 	</div>
     </header>
     <main>
@@ -47,7 +47,7 @@
 		    <li>ブランチの移動</li>
 		    git checkout ブランチ名<br>
 		    <li>ブランチのマージ</li>
-		    git merge --no-ff ブランチ名<br>
+		    git merge --no-ff 作業してたブランチ名<br>
 		    <li>歴史を戻る</li>
 		    git reset --hard コミットID<br>
 		    <li>リモートリポジトリの登録</li>
@@ -58,23 +58,25 @@
 		    git clone リポジトリのパス(あれ)<br>
 	    </ul>
 	    <span class="semibig">よくあるパターン(?)<br></span>
-	    git branch ファイル名でブランチで分ける(ローカル環境内でmasterがバックアップ、ミスったらmasterへ帰る)<br>
+	    git branch ファイル名 でブランチを分ける(ローカル環境内でmasterがバックアップとなる履歴)<br>
 	    ↓<br>
-	    git checkout ブランチ名で作ったブランチへ移動<br>
+	    git checkout ブランチ名 で作ったブランチへ移動<br>
 	    ↓<br>
 	    実作業が上手くいった<br>
 	    ↓<br>
-	    git merge --no-ff ブランチ名で作業してるところをmasterにしちゃう<br>
+	    git add ファイル名 でファイル追加<br>
 	    ↓<br>
-	    git add ファイル名でファイル追加<br>
+	    git commit -m ファイル名 でコミット<br>
 	    ↓<br>
-	    git commit -m ファイル名でコミット<br>
+	    git checkout master でマスターへ帰る<br>
 	    ↓<br>
-	    git pushで自分のgithubにアップロード<br>
+	    git merge --no-ff 作業してたブランチ名 で作業してたところの履歴をmasterの履歴を反映<br>
+	    ↓<br>
+	    git push で自分のgithubにアップロード(ローカルからオンラインへ)<br>
 	    ↓<br>
 	    github上で元々のリポジトリにプルリクエスト送信<br>
 	    ↓<br>
-	    他の人にマージしてもらう<br>
+	    他の人にマージしてもらう(これでみんなの原本のリポジトリに自分の変更が反映)<br>
 		<div class="center"><br><a href="index.html">homeへ</a></div>
     </main>
     <footer>
