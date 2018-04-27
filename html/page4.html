@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>ソララランのページ</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments) };
+		gtag('js', new Date());
+
+		gtag('config', 'UA-107254274-1');
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<div class="center">
+			<h1 class="title">ソララランのページ</h1>
+			<div>
+				<img src="../image/index/three.jpg" alt="Les Trois Mousquetaires">
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="center">
+			<span class="big">texメモ
+				<br>
+			</span>
+		</div>
+		<span class="semibig">使いそうな文</span>
+		<ul>
+			<li>定義</li>
+			\documentclass{jsarticle}
+			<br> \usepackage[dvipdfmx]{graphicx}
+			<br> \usepackage{amsmath}
+			<br> \usepackage{listings,jlisting}
+			<br> \usepackage[dvipdfmx]{color}
+			<br> \usepackage{lscape}
+			<br> \begin{document}
+			<br> \lstset{% language={},
+			<br> %backgroundcolor={\color[gray]{.85}},%
+			<br> basicstyle={\small},%
+			<br> identifierstyle={\small},%
+			<br> commentstyle={\small\itshape},%
+			<br> keywordstyle={\small\bfseries},%
+			<br> ndkeywordstyle={\small},%
+			<br> stringstyle={\small\ttfamily},
+			<br> frame={tb}, breaklines=true,
+			<br> columns=[l]{fullflexible},%
+			<br> numbers=left,% xrightmargin=0zw,%
+			<br> xleftmargin=3zw,%
+			<br> numberstyle={\scriptsize},%
+			<br> stepnumber=1, numbersep=1zw,%
+			<br> lineskip=-0.5ex%
+			<br> }
+			<br>
+			<br> \renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equati\ on}}
+			<br> \renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}} \renewcommand{\thetable}{\arabic{section}.\arabic{subsection}.\arabic{table}}
+			<br> \makeatletter
+			<br> \@addtoreset{equation}{subsection}
+			<br> \@addtoreset{figure}{subsection}
+			<br> \@addtoreset{table}{subsection}
+			<br> \makeatother
+			<br>
+			<br> \makeatletter
+			<br> \def\@maketitle{
+			<br> \begin{flushright}
+			<br> {\large \@date}
+			<br> \end{flushright}
+			<br> \begin{center}
+			<br> {\LARGE \@title \par}
+			<br> \end{center}
+			<br> \begin{flushright}
+			<br> {\large \@author}
+			<br> \end{flushright}
+			<br> \makeatother
+			<br> \title{タイトル}
+			<br> \author{名前}
+			<br> \date{}
+			<br>
+			<br> \maketitle
+			<br>
+			<br> ここに色々と書く
+			<br>
+			<br> \end{document}
+			<br>
+			<br>
+			<li>章題</li>
+			\section{章名}
+			<br> \subsection{章名}
+			<br> \subsubsection{章名}
+			<br>
+			<br>
+			<li>画像</li>
+			\begin{figure}[htb]
+			<br> \begin{center}
+			<br> \includegraphics[width=15cm,bb=0 0 縦(数字) 横(数字)]{画像へのパス} \caption{タイトル}
+			<br> \end{center}
+			<br> \end{figure}
+			<br>
+			<br>
+			<li>表</li>
+			\begin{table}[htb]
+			<br> \begin{center}
+			<br> \caption{タイトル}
+			<br> \begin{tabular}{c|c}
+			<br> \hline
+			<br> & \\
+			<br> & \\
+			<br> \hline
+			<br> \end{tabular}
+			<br> \end{center}
+			<br> \end{table}
+			<br> \clearpage
+			<br>
+			<br>
+			<li>インデントしない</li>
+			\noindent
+			<br>
+			<br>
+			<li>参考文献</li>
+			\begin{thebibliography}{9}
+			<br> \bibitem{text}引用
+			<br> \end{thebibliography}
+			<br>
+			<br>
+		</ul>
+		<div class="center">
+			<br>
+			<a href="../index.html">homeへ</a>
+		</div>
+	</main>
+	<footer>
+		<p>Copyright &copy; 2017 Solalalan</p>
+	</footer>
+</body>
+
+</html>
