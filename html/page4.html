@@ -38,26 +38,9 @@
 			\documentclass{jsarticle}
 			<br> \usepackage[dvipdfmx]{graphicx}
 			<br> \usepackage{amsmath}
-			<br> \usepackage{listings,jlisting}
 			<br> \usepackage[dvipdfmx]{color}
 			<br> \usepackage{lscape}
 			<br> \begin{document}
-			<br> \lstset{% language={},
-			<br> %backgroundcolor={\color[gray]{.85}},%
-			<br> basicstyle={\small},%
-			<br> identifierstyle={\small},%
-			<br> commentstyle={\small\itshape},%
-			<br> keywordstyle={\small\bfseries},%
-			<br> ndkeywordstyle={\small},%
-			<br> stringstyle={\small\ttfamily},
-			<br> frame={tb}, breaklines=true,
-			<br> columns=[l]{fullflexible},%
-			<br> numbers=left,% xrightmargin=0zw,%
-			<br> xleftmargin=3zw,%
-			<br> numberstyle={\scriptsize},%
-			<br> stepnumber=1, numbersep=1zw,%
-			<br> lineskip=-0.5ex%
-			<br> }
 			<br>
 			<br> \renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equati\ on}}
 			<br> \renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}} \renewcommand{\thetable}{\arabic{section}.\arabic{subsection}.\arabic{table}}
@@ -80,7 +63,7 @@
 			<br> \end{flushright}
 			<br> \makeatother
 			<br> \title{タイトル}
-			<br> \author{名前}
+			<br> \author{学籍番号\\名前}
 			<br> \date{}
 			<br>
 			<br> \maketitle
@@ -97,9 +80,10 @@
 			<br>
 			<br>
 			<li>画像</li>
-			\begin{figure}[htb]
+			\begin{figure}[hbt]
 			<br> \begin{center}
-			<br> \includegraphics[width=15cm,bb=0 0 縦(数字) 横(数字)]{画像へのパス} \caption{タイトル}
+			<br> \includegraphics[width=10cm]{画像へのパス} 
+			<br> \caption{タイトル}
 			<br> \end{center}
 			<br> \end{figure}
 			<br>
