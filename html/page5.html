@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>ソララランのページ</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments) };
+		gtag('js', new Date());
+
+		gtag('config', 'UA-107254274-1');
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<div class="center">
+			<h1 class="title">ソララランのページ</h1>
+			<div>
+				<img src="../image/index/three.jpg" alt="Les Trois Mousquetaires">
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="center">
+			<span class="big">javascriptメモ
+				<br>
+			</span>
+		</div>
+		<span class="semibig">使いそうな文
+			<br>
+		</span>
+		<ul>
+			<li>htmlファイルに記述</li>
+			document.write('書きたいこと(htmlで)');
+			<br>
+			<br>
+			<li>日付</li>
+			var today = new Date();
+			<br>
+			1970年1月1日0:00からの経過時間(ミリ秒): (today.getTime())
+			<br>
+			日にち: (today.getDate())
+			<br>
+			月: (today.getMonth()+1)
+			<br>
+			年: today.getFullYear()
+			<br>
+			<br>
+			<li>xx属性(xx = Id, Class, Name, TagName)を元に要素を取得する</li>
+			document.getElementByxx('xx名');
+			<br>
+			削除: document.getElementByxx('xx名').remove();
+			<br>
+			書き換え: document.getElementByxx('xx名').innerHTML = '書き換えたいこと';
+			<br>
+			イベントを定義する: document.getElementByxx('xx名').addEventListener('イベント', function(){});
+			<br>
+			<br>
+			イベントとは
+			<br>
+			keydown: キーボードが押された
+			<br>
+			keypress: キーボードが押し続けられている
+			<br>
+			keyup: キーボードが押された状態から放された
+			<br>
+			mouseenter: マウスカーソルが要素に触れた
+			<br>
+			mouseover: マウスカーソルが要素に触れ続けている
+			<br>
+			mousemove: マウスカーソルが動いた
+			<br>
+			mousedown: マウスボタンをクリックした
+			<br>
+			mouseup: マウスボタンを放した
+			<br>
+			click: クリックした
+			<br>
+			dblclick: ダブルクリックした
+			<br>
+			<br>
+			<li>間隔で関数呼び出し</li>
+			setInterval(関数名, 間隔(ミリ秒))
+		</ul>
+		<div class="center">
+			<br>
+			<a href="../index.html">homeへ</a>
+		</div>
+	</main>
+	<footer>
+		<p>Copyright &copy; 2017 Solalalan</p>
+	</footer>
+</body>
+
+</html>
