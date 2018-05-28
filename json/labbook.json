@@ -1,0 +1,37 @@
+[
+ {
+  "name": "本の名前",
+  "author": "作者名",
+  "caption": "コメント"
+ },
+ {
+  "name": "HTML&CSS,JavaScriptのきほんのきほん",
+  "author": "たにぐちまこと",
+  "caption": "HTML、CSS、JavaScript(jsはAjax通信、JQuery、Vue.jsまで、ちょっとだけNode.js)"
+ },
+ {
+  "name": "Unity5の教科書",
+  "author": "北村愛美",
+  "caption": "Unityのサンプルゲーム作成本"
+ },
+ {
+  "name": "見てわかるUnity2017C#スクリプト超入門",
+  "author": "掌田津耶乃",
+  "caption": "Unityのサンプル本、C#強め"
+ },
+ {
+  "name": "UnityによるARゲーム開発 作りながら学ぶオーグメンテッドリアリティ入門",
+  "author": "Micheal Lanham",
+  "caption": "ポケモンGO的なのを作る"
+ },
+ {
+  "name": "退屈なことはPythonにやらせてみよう ノンプログラマーにもできる自動化処理プログラミング",
+  "author": "AI Sweigart",
+  "caption": "Python本"
+ },
+ {
+  "name": "GitHub実践入門",
+  "author": "大塚弘記",
+  "caption": "GitHub本"
+ }
+]

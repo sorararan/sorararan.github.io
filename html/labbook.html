@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>ソララランのページ</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments) };
+		gtag('js', new Date());
+
+		gtag('config', 'UA-107254274-1');
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<div class="center">
+			<h1 class="title">ソララランのページ</h1>
+			<div>
+				<img src="../image/index/three.jpg" alt="Les Trois Mousquetaires">
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="center">
+			<span class="big">ラボに置いてあるものまとめ
+				<br>
+			</span>
+			(何を置いたか忘れない用にメモ)
+		</div>
+		
+		<br>
+		<div id="book_unit" class="center">
+		</div>
+		<script>
+		    var ajax = new XMLHttpRequest();
+			ajax.open('GET', '../json/labbook.json');
+			ajax.responseType = 'json';
+			ajax.send(null);
+
+			ajax.onreadystatechange = function(){
+			    if(ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200){
+				    for(var i=0; i<this.response.length; i++){
+					    var data = this.response[i];
+
+						var caption = document.createElement('span');
+						caption.className = 'inner';
+						caption.innerHTML  = '[' + i + ']' + data.author + ', 「' + data.name + '」<br>' + data.caption + '<br><br>';
+						document.getElementById('book_unit').appendChild(caption);
+					}
+				}
+			};
+		</script>
+		<div class="center">
+		あとP3D、P5D、サントラ<br><br>
+		</div>
+		<div class="center">それでは、またどこかで!
+			<br>
+			<a href="../index.html">homeへ</a>
+		</div>
+	</main>
+	<footer>
+		<p>Copyright &copy; 2017 Solalalan</p>
+	</footer>
+</body>
+
+</html>
