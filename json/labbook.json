@@ -33,5 +33,10 @@
   "name": "GitHub実践入門",
   "author": "大塚弘記",
   "caption": "GitHub本"
+ },
+ {
+  "name": "ゼロから始めるLinuxサーバー構築・運用ガイド 動かしながら学ぶWebサーバーの作り方",
+  "author": "中島能和",
+  "caption": "サーバ本"
  }
 ]
