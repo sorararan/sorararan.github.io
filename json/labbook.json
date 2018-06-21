@@ -38,5 +38,10 @@
   "name": "ゼロから始めるLinuxサーバー構築・運用ガイド 動かしながら学ぶWebサーバーの作り方",
   "author": "中島能和",
   "caption": "サーバ本"
+ },
+ {
+ "name": "PHP7+MariaDB/MYSQL マスターブック",
+ "author": "永田順伸",
+ "caption": "PHPとデータベースで完飲管理システムを作る本"
  }
 ]
