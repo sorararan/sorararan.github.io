@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<title>ソララランのページ</title>
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107254274-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments) };
+		gtag('js', new Date());
+
+		gtag('config', 'UA-107254274-1');
+	</script>
+</head>
+
+<body>
+	<header>
+		<div class="center">
+			<h1 class="title">ソララランのページ</h1>
+			<div>
+				<img src="../image/index/three.jpg" alt="Les Trois Mousquetaires">
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="center">
+			<span class="big">サーバ関連メモ
+				<br>
+			</span>
+		</div>
+
+		<span class="semibig">ssh関連
+			<br>
+		</span>
+		<ul>
+			<li>ログインするとき</li>
+			ssh ユーザ名@アドレス (-p ポート番号)
+			<br>
+			<br>
+			<li>RSA鍵の作り方</li>
+			ssh-keygen -t rsa
+			<br> 対話式でファイル名、パスワード、パスワード(確認)を入力
+			<br>
+			<br>
+			<li>ファイルを他の端末に送る</li>
+			scp 送りたいファイル名 ユーザ名@アドレス:パス
+			<br> (フォルダを送りたい時はscpの後に-rオプション)
+			<br>
+			<br>
+			<li>上で鍵を作って公開鍵をサーバに送ったら</li>
+			cat id_rsa.pub >> ~/.ssh/authorized_keys
+			<br><br>
+		</ul>
+
+		<span class="semibig">mysql関連
+			<br>
+		</span>
+		<ul>
+			<li>mysqlに入るとき</li>
+			mysql -u ユーザ名 -p
+			<br> でパスワードが聞かれるから書いてログイン
+			<br><br>
+			<li>ユーザ作成</li>
+			create user 'ユーザ名'@'ホスト名' identified by 'パスワード';
+			<br><br>
+			<li>権限</li>
+			grant 権限 on データベース名.* to 'ユーザ名'@'ホスト名';
+			<br> (例えば、全ての権限はall privilegesとか)
+			<br><br>
+			<li>データベース作成</li>
+			create database データベース名;
+			<br><br>
+			<li>データベースとかテーブル一覧</li>
+			show databases;
+			<br> show tables;
+			<br><br>
+			<li>データベース選択</li>
+			use データベース名;
+			<br><br>
+			<li>データベースの削除</li>
+			drop database データベース名;
+			<br><br>
+			<li>テーブル作成</li>
+			create table テーブル名(カラム名 データ型, ..., プライマリキー);
+			<br><br>
+			<li>挿入</li>
+			insert into テーブル名(カラム名1, カラム名2...) values (値1, 値2...);
+			<br><br>
+			<li>検索</li>
+			select カラム名 from テーブル名 (where 条件式) (order by カラム名);
+			<br><br>
+			<li>更新</li>
+			update テーブル名 set カラム名 = "更新データ";
+			<br><br>
+			<li>削除</li>
+			delete from テーブル名 (where 条件式);
+			<br><br>
+		</ul>
+
+		<span class="semibig">apache関連
+			<br>
+		</span>
+		<ul>
+			<li>なにかする時</li>
+			<br><br>
+		</ul>
+
+
+		<div class="center">
+			<br>
+			<a href="../index.html">homeへ</a>
+		</div>
+	</main>
+	<footer>
+		<p>Copyright &copy; 2017 Solalalan</p>
+	</footer>
+</body>
+
+</html>
