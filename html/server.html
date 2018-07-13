@@ -37,13 +37,13 @@
 		</span>
 		<ul>
 			<li>ログインするとき</li>
-			ssh ユーザ名@アドレス (-p ポート番号)
+			ssh ユーザ名@アドレス (-p ポート番号 -i 秘密鍵のパス)
 			<br>
 			<br>
 			<li>RSA鍵の作り方</li>
 			ssh-keygen -t rsa
-			<br> 対話式でファイル名、パスワード、パスワード(確認)を入力
-			<br>これで秘密鍵と公開鍵ができる、サーバ上の公開鍵とクライアント上の秘密鍵で認証ができる
+			<br> 対話式でファイル名、パスワード、パスワード(確認)を入力、ファイル名の時に何も書かずにenter押すと~/.sshにid_rsa(秘密鍵)とid_rsa.pub(公開鍵)ができる
+			<br>これで秘密鍵と公開鍵ができる、サーバ上の公開鍵とクライアント上の秘密鍵で認証ができる、クライアント上での秘密鍵の置き場は~/.ssh/id_rsa
 			<br>
 			<br>
 			<li>ファイルを他の端末に送る</li>
@@ -51,9 +51,26 @@
 			<br> (フォルダを送りたい時はscpの後に-rオプション)
 			<br>
 			<br>
-			<li>上で鍵を作って公開鍵をサーバに送ったら</li>
+			<li>↑で鍵を作って公開鍵をサーバに送ったらサーバ上で</li>
 			cat id_rsa.pub >> ~/.ssh/authorized_keys
-			<br><br>
+			<br>↓.sshファイルもauthorized_keysもない場合は作る、.sshファイルは700、authorized_keysは600権限
+			<br>cd ~
+			<br>mkdir .ssh
+			<br>chmod 700 .ssh
+			<br>cd .ssh
+			<br>touch authorized_keys
+			<br>chmod 600 authorized_keys
+			<br>
+			<br>
+			<li>サーバ側のssh設定(変更した際に、sshdの再起動を忘れずに!)</li>
+			/etc/ssh/sshd_configをいじる
+			<br>(#と空白でコメント、#と空白なしでコメントアウトらしい)
+			<br>Port 22の行を変えるとポート番号の変更
+			<br>PermitRootLogin noでRootログインの禁止
+			<br>RSAAuthentication yesでRSA認証の許可
+			<br>PubkeyAuthentication yesで公開鍵認証の許可
+			<br>AuthorizedKeysFile     .ssh/authorized_keysで公開鍵をどこに登録しておくか
+			<br>PasswordAuthentication noでパスワード認証の禁止
 		</ul>
 
 		<span class="semibig">mysql関連
