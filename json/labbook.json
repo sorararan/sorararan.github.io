@@ -35,28 +35,28 @@
   "caption": "GitHub本"
  },
  {
-  "name": "ゼロから始めるLinuxサーバー構築・運用ガイド 動かしながら学ぶWebサーバーの作り方",
-  "author": "中島能和",
-  "caption": "サーバ本"
+   "name": "PHP7+MariaDB/MYSQL マスターブック",
+   "author": "永田順伸",
+   "caption": "PHPとデータベースで完飲管理システムを作る本"
  },
  {
- "name": "PHP7+MariaDB/MYSQL マスターブック",
- "author": "永田順伸",
- "caption": "PHPとデータベースで完飲管理システムを作る本"
+   "name": "マスタリングTCP/IP 入門編",
+   "author": "竹下隆史, 村山公保, 新井透, 苅田幸雄",
+   "caption": "TCP/IPの名著"
  },
  {
- "name": "マスタリングTCP/IP 入門編",
- "author": "竹下隆史, 村山公保, 新井透, 苅田幸雄",
- "caption": "TCP/IPの名著"
+   "name": "作りながら学ぶ! 深層強化学習 PyTorchによる実践プログラミング",
+   "author": "小川雄太郎",
+   "caption": "結構ライブラリとか環境とか依存してそう(まだ読んでいない顔)"
  },
  {
- "name": "ゼロから作るDeep Learning-Pythonで学ぶディープラーニングの理論と実装",
- "author": "斎藤康穀",
- "caption": "numpyとかで頑張るやつ"
+   "name": "詳解 OpenCV ――コンピュータビジョンライブラリを使った画像処理・認識",
+   "author": "Gary Bradski, Adrian Kaehler",
+   "caption": "opencvの本"
  },
  {
- "name": "作りながら学ぶ! 深層強化学習 PyTorchによる実践プログラミング",
- "author": "小川雄太郎",
- "caption": "結構ライブラリとか環境とか依存してそう(まだ読んでいない顔)"
+   "name": "実践 コンピュータビジョン",
+   "author": "Jan Erik Solem",
+   "caption": "python2系のopencvの本(涙)"
  }
 ]
