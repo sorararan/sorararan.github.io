@@ -28,9 +28,9 @@
 			<div>
 				<img src="image/index/three.jpg" alt="Les Trois Mousquetaires"><br>
 				<script>
-				var today = new Date();
-				document.write('<span class="semibig">今日は' + today.getFullYear() + '年' + (today.getMonth()+1) + '月' + today.getDate() + '日' + 'です<br></span>');
-				document.write('<span class="semibig">平成: ' + (today.getFullYear() - 1988) + '年です<br></span>');
+				var date = new Date();
+                                var wareki = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', { era: 'long' }).format(date);
+                                document.write('<span class="semibig">今日は' + date.getFullYear() + '年<br>' + wareki + 'です<br></span>');
 				</script>
 			</div>
 		</div>
