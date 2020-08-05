@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html>
   <head>
-    <meta charset='utf-8'>
-    <title> { { page.title } } </title>
+    <meta charset="utf-8">
+    <title> {{ page.title }} </title>
   </head>
 
   <body>
@@ -17,6 +17,9 @@
         過度な期待はしないでください。
       </h2>
     </header>
-    <div> { { content } } </div>
+
+    <section>
+      {{ content }}
+    </section>
   </body>
 </html>
