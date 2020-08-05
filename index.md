@@ -1,6 +1,6 @@
 # ソララランのメモ
-このページは[@sorararan](https://github.com/sorararan)の個人メモを淡々と記しておくページです。過度な期待はしないでください。
-[旧ソララランのページはこちら](./legacy/index.html)
+このページは[@sorararan](https://github.com/sorararan)の個人メモを淡々と記しておくページです。  
+過度な期待はしないでください。
 
 ## 日常系
 気が向いたら何かを書くことになっていると伝えられています
@@ -17,3 +17,6 @@
 - [gitbucket設定(整備中)](./docs/gitbucket_setting.md)
 - [dnsmasq設定(整備中)](./docs/dnsmasq_setting.md)
 - [prometheus、grafana、exporter設定(整備中)](./docs/monitor_setting.md)
+
+## 旧ソララランのページ
+[こちら](./legacy/index.html)
