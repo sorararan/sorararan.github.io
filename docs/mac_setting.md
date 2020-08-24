@@ -18,3 +18,11 @@ brew cask install google-chrome
 brew cask install slack
 brew cask install visual-studio-code
 ```
+
+## コマンドラインツールのインストール
+### zshを使う
+```
+brew install zsh
+chsh
+```
+`chsh` でパスワードと `which zsh` で出てくるzshのパスを入力
