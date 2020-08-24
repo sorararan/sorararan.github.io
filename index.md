@@ -1,5 +1,6 @@
 ---
 title: ソララランのメモ
+toppage: true
 ---
 
 # 日常系

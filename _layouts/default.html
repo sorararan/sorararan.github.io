@@ -30,6 +30,11 @@
           {{ content }}
         </section>
 
+        {% unless page.toppage %}
+          <footer style="text-align: center;">
+            <h3><a href="https://sorararan.github.io/">homeへ</a></h3>
+          </footer>
+        {% endunless  %}
       </div>
     </div>
   </body>
