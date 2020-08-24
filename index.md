@@ -11,7 +11,7 @@ title: ソララランのメモ
 
 - [raspberry piサーバー構築](./docs/raspserver_setting.md)
 - [dnsmasq設定](./docs/dnsmasq_setting.md)
-- [mac開発環境構築(整備中)](./docs/mac_setting.md)
+- [mac開発環境構築](./docs/mac_setting.md)
 - [wsl開発環境構築(整備中)](./docs/wsl_setting.md)
 - [vscode環境構築(整備中)](./docs/vscode_setting.md)
 - [jenkins設定(整備中)](./docs/jenkins_setting.md)
