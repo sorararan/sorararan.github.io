@@ -2,11 +2,11 @@
 title: ソララランのメモ
 ---
 
-## 日常系
+# 日常系
 気が向いたら何かを書くことになっていると伝えられています
 
 
-## 技術系
+# 技術系
 完全に個人用備忘録
 
 - [raspberry piサーバー構築](./docs/raspserver_setting.md)
@@ -19,5 +19,5 @@ title: ソララランのメモ
 - [prometheus、grafana、exporter設定(整備中)](./docs/monitor_setting.md)
 
 
-## 旧ソララランのページ
+# 旧ソララランのページ
 [こちら](./legacy/index.html)
