@@ -1,69 +1,127 @@
 # sambaファイルサーバー設定
-sambaで家のファイルサーバーを立てたときのメモ  
-実際はdockerコンテナでやったけど、設定ファイルがあんまりきれいにまとまらなかったので、sambaの設定だけメモしておく、osはalpine
+sambaで家のファイルサーバーを立てたときのメモ
 
-## sambaインストール
+## 構成
+環境をあまり汚さないようにdockerでやることにした
 ```
-apk update
-apk add --no-cache samba
+file_server:
+  - .env
+  - docker-compose.yml
+  - Dockerfile
+  - run.sh
+  - smb.conf
 ```
 
-## samba設定
-### `/etc/samba/smb.conf`
+## docker関連
+### `Dockerfile`
+ラズパイで動かす際にarmプロセッサ用の `samba` イメージがあるのか知らんので `alpine` からイメージを作った
+```
+FROM alpine:latest
+
+RUN apk update \
+  && apk add --no-cache samba
+
+COPY ./smb.conf /etc/samba/smb.conf
+COPY ./run.sh /usr/local/bin/run.sh
+RUN chmod 500 /usr/local/bin/run.sh
+
+EXPOSE 139 445
+CMD ["/bin/ash", "-c", "/usr/local/bin/run.sh"]
+```
+
+### docker-compose.yml
+ローカルでマウントするところのパスのところはよしなに  
+(うちでは外付けhddを当てた)
+```
+version: "3"
+services:
+  samba:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "139:139"
+      - "445:445"
+    env_file:
+      - ./.env
+    volumes:
+      - ローカルでマウントするところのパス:/home
+    restart: always
+```
+
+## samba関連
+### `smb.conf`
 ```
 # グローバル設定
 [global]
+   # windowsクライアントと同じワークグループを指定する
    workgroup = WORKGROUP
+   # ネットワークコンピュータ一覧を表示した際に、表示される内容らしい
    server string = Samba Server
+   # 動作モード設定
    server role = standalone server
-   hosts allow = ipアドレス
+   # アクセスを許可するipアドレス
+   hosts allow = 192.168.3.
+   # 許可したipアドレス以外は拒否
    hosts deny = all
+   # ゲストアカウント指定
    guest account = nobody
+   # 指定されたユーザがないとき、ゲストでログイン許可
    map to guest = Bad User
-   log file = /usr/local/samba/var/log.%m
-   max log size = 50
-   dns proxy = no
+   # windowsクライアントで対応してないunix拡張off
    unix extensions = no
-   unix charset = UTF-8
-   dos charset = CP932
 
-# 特定のユーザー用ディレクトリ(パスワード認証付き)
+# 各ユーザー専用のディレクトリ
 [homes]
+   # 説明欄に表示される
    comment = Home Directories
+   # ネットワークコンピュータに表示しない
    browseable = no
+   # ファイル書き込みできる
    writable = yes
 
-# ゲストユーザー用ディレクトリ(lan内誰でも)
+# 共有ディレクトリ
 [share]
+  # 割り当てるパス指定
    path = /home/public
+   # ゲストアクセス許可
    guest ok = yes
+   # ファイル操作はguestによって実行
    guest only = yes
+   # ネットワークコンピュータに表示する
    browsable = yes
+   # ファイル書き込みできる
    writable = yes
+   # shareに上げた場合はもうrwx何でも
    create mask = 0777
    directory mask = 0777
 ```
 
-### ユーザー作成
+### `run.sh`
 ```
-adduser -D ユーザ名
-# パスワード作成
-chpasswd
-# samba用にユーザー設定
-pdbedit -a -u ユーザ名
-```
-
-### ゲスト用のディレクトリ作成
-```
-mkdir /home/public
+#!/bin/ash
 chmod 777 /home/public
-```
 
-### 実行
-```
+ls -l /home/ | grep ^d | grep -v public | awk '{print $9}' | while read username
+do
+  adduser -DH $username
+  echo "$username:`eval echo '$'$username`" | chpasswd
+  echo -e "`eval echo '$'$username`\n`eval echo '$'$username`" | pdbedit -a -u $username
+done
+
 nmbd -D
 smbd -FS --no-process-group --configfile=/etc/samba/smb.conf </dev/null
 ```
 
+### `.env`
+`.gitignore` が効くように、パスワードはこのファイルに分離した  
+以下のような形式で書くようにした  
+(一応何行書いてもそれだけユーザーが作成されるようにしてあるはず)
+```
+ユーザー名=パスワード
+```
+
 ## その他
-必要なポートは `139` と `445`
+動かす際にはローカルでマウントするところのディレクトリに `public` と `ユーザー名` を作成しておく必要がある  
+今回は元々データがあるhddを割り当てたかったのでディレクトリがすでにある体で作った  
+新しいものを割り当てるときはもう少しその辺り自動化しても良いかも

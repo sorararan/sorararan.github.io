@@ -6,7 +6,7 @@ goの環境構築をしたときのメモ
 git clone https://github.com/syndbg/goenv.git ~/.goenv
 ```
 
-## .zshrc
+## `.zshrc`
 `.goenv` にgoenvを、 `.go` にパッケージなどを入れるように設定  
 goenvが勝手に `GOPATH` を設定しちゃうので、 `GOENV_DISABLE_GOPATH` で抑制
 ```

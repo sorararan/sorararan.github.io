@@ -14,7 +14,7 @@ dns:
 ```
 
 ## docker関連
-### Dockerfile
+### `Dockerfile`
 ラズパイで動かす際にarmプロセッサ用の `dnsmasq` イメージがあるのか知らんので `alpine` からイメージを作った
 ```
 FROM alpine:latest
@@ -32,7 +32,7 @@ EXPOSE 53/tcp 53/udp
 CMD ["dnsmasq", "-k"]
 ```
 
-### docker-compose.yml
+### `docker-compose.yml`
 `様々なネットワーク関連処理の実施` できるようにする `NET_ADMIN` が必要らしい
 ```
 version: "3"
@@ -52,7 +52,7 @@ services:
 ## dnsmasq関連
 `dnsmasq_resolv.conf` と `hosts_dnsmasq` は `/etc/resolv.conf` と `/ets/hosts` と同じ用に設定したいものを書けばいい
 
-### dnsmasq.conf
+### `dnsmasq.conf`
 ```
 user=root
 
