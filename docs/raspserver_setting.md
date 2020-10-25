@@ -87,3 +87,10 @@ sudo apt-get install docker-compose
 sudo apt-get install tmux vim
 ```
 
+## 定期リブート
+rootユーザ( `su -` )で
+### `crontab -e`
+```
+# 土曜の5時にリブート
+0 5 * * 6 /sbin/reboot
+```
