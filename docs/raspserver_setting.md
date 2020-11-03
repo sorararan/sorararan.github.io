@@ -45,9 +45,8 @@ sudo systemctl enable ssh
 ```
 
 ### 公開鍵を持ってくる
-ホームディレクトリで
 ```
-mkdir .ssh
+mkdir ~/.ssh
 ```
 
 鍵を持ってる方のマシンで
@@ -60,6 +59,24 @@ scp 公開鍵のパス ユーザー名@IPアドレス:~/.ssh/authorized_keys
 Port 使うポート番号
 PermitRootLogin no
 PasswordAuthentication no
+```
+
+
+## ラズパイ設定
+### `/boot/config.txt` の設定
+本体の電源を入れ、後からhdmi映像出力を接続すると映らないので
+```
+# コメントアウトを外す
+hdmi_force_hotplug=1
+```
+
+
+## 定期リブート
+rootユーザ( `su -` )で
+### `crontab -e`
+```
+# 土曜の5時にリブート
+0 5 * * 6 /sbin/reboot
 ```
 
 
@@ -87,10 +104,3 @@ sudo apt-get install docker-compose
 sudo apt-get install tmux vim
 ```
 
-## 定期リブート
-rootユーザ( `su -` )で
-### `crontab -e`
-```
-# 土曜の5時にリブート
-0 5 * * 6 /sbin/reboot
-```
