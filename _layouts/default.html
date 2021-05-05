@@ -28,13 +28,17 @@
 
         <section id="main_content">
           {{ content }}
+          {% unless page.toppage %}
+          <h3 style="text-align: center;">
+            <a href="https://sorararan.github.io/">homeへ</a>
+          </h3>
+        {% endunless  %}
+
         </section>
 
-        {% unless page.toppage %}
-          <footer style="text-align: center;">
-            <h3><a href="https://sorararan.github.io/">homeへ</a></h3>
-          </footer>
-        {% endunless  %}
+        <footer style="text-align: center;">
+          <p><small>Copyright &copy; solalalan All Rights Reserved.</small></p>
+        </footer>
       </div>
     </div>
   </body>
